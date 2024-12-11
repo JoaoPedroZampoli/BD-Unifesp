@@ -1,6 +1,6 @@
 /*Criação de novo banco de dados*/
-create database JoaoPZampoli;
-use JoaoPZampoli;
+create database BancoAula01;
+use BancoAula01;
 
 create table Fornecedor(
 	fcod int,
