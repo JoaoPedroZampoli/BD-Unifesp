@@ -89,7 +89,7 @@ export default function DadosPublicosPage() {
           <animated.div style={cardSpring}>
             <Card isFooterBlurred className="w-full h-[300px] bg-gradient-to-r from-green-600 to-blue-500 flex items-center justify-center">
               <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                <p className="text-tiny text-white/60 uppercase font-bold">2024.2</p>
+                <p className="text-tiny text-white/60 uppercase font-bold">Atualmente</p>
                 <h4 className="text-white/90 font-medium text-xl">Quantidade de Alunos</h4>
               </CardHeader>
               <div className="z-0 w-full h-full flex items-center justify-center">
@@ -102,7 +102,7 @@ export default function DadosPublicosPage() {
           <animated.div style={cardSpring}>
             <Card isFooterBlurred className="w-full h-[300px] bg-gradient-to-r from-pink-500 to-orange-500 flex items-center justify-center">
               <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                <p className="text-tiny text-white/60 uppercase font-bold">2024.2</p>
+                <p className="text-tiny text-white/60 uppercase font-bold">Atualmente</p>
                 <h4 className="text-white/90 font-medium text-xl">Quantidade de Monitores</h4>
               </CardHeader>
               <div className="z-0 w-full h-full flex items-center justify-center">
