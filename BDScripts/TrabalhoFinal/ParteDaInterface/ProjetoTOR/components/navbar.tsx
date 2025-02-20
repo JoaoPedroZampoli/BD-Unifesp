@@ -92,7 +92,7 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
         {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
-        <NavbarItem className="hidden md:flex">
+        {/* <NavbarItem className="hidden md:flex">
           <Button
             isExternal
             as={Link}
@@ -102,7 +102,7 @@ export const Navbar = () => {
           >
             Log-in
           </Button>
-        </NavbarItem>
+        </NavbarItem> */}
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
