@@ -14,6 +14,7 @@ export default function DadosPublicosPage() {
   const [robosCriados, setRobosCriados] = useState(0);
   const [monitoresAtuais, setMonitoresAtuais] = useState([]);
   const [exMonitores, setExMonitores] = useState([]);
+  const [robos, setRobos] = useState([]);
   const [loadingState, setLoadingState] = useState("Loading");
 
   const rowsPerPage = 5;
@@ -21,9 +22,9 @@ export default function DadosPublicosPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseRobos = await fetch("/api/DadosAbertos/RobosCriados");
-        const dataRobos = await responseRobos.json();
-        setRobosCriados(dataRobos.count);
+        const responseRobosCriados = await fetch("/api/DadosAbertos/RobosCriados");
+        const dataRobosCriados = await responseRobosCriados.json();
+        setRobosCriados(dataRobosCriados.count);
 
         const response = await fetch("/api/DadosAbertos/AlunosAtivos");
         const data = await response.json();
@@ -40,6 +41,10 @@ export default function DadosPublicosPage() {
         const responseExMonitores = await fetch("/api/DadosAbertos/ExMonitores");
         const dataExMonitores = await responseExMonitores.json();
         setExMonitores(dataExMonitores);
+
+        const responseRobos = await fetch("/api/DadosAbertos/Robos");
+        const dataRobos = await responseRobos.json();
+        setRobos(dataRobos);
 
         setLoadingState("Idle");
 
@@ -201,6 +206,27 @@ export default function DadosPublicosPage() {
                     </Card>
                   </Tab>
                 </Tabs>
+            </div>
+          </animated.div>
+          <animated.div>
+            <h2 className={sectionTitle()}>Robôs já produzidos pelo TOR</h2>
+            <div className="flex flex-wrap gap-6 align-middle justify-center w-full">
+              <Table isStriped className="w-8/12 py-6">
+                <TableHeader>
+                  <TableColumn key="IDRobo">ID</TableColumn>
+                  <TableColumn key="NomeRobo">Nome</TableColumn>
+                  <TableColumn key="IDEquipe">Equipe</TableColumn>
+                  <TableColumn key="IDMaterial">Material</TableColumn>
+                  <TableColumn key="IDProjeto">Projeto</TableColumn>
+                </TableHeader>
+                <TableBody items={robos} loadingContent={<Spinner />} loadingState={loadingState}>
+                  {(item) => (
+                    <TableRow key={item?.IDRobo}>
+                      {(columnKey) => <TableCell>{item[columnKey]}</TableCell>}
+                    </TableRow>
+                  )}
+                </TableBody>
+              </Table>
             </div>
           </animated.div>
     </div>

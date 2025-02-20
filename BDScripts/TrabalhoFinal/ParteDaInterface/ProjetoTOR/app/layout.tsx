@@ -51,8 +51,8 @@ export default function RootLayout({
               <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
-                href="https://heroui.com?utm_source=next-app-template"
-                title="heroui.com homepage"
+                href="https://github.com/JoaoPedroZampoli"
+                title="Perfil do GitHub"
               >
                 <span className="text-default-600">Feito por</span>
                 <p className="text-primary">JPSZ 😀</p>
